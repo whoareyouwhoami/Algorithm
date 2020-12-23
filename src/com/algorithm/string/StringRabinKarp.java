@@ -10,7 +10,7 @@ public class StringRabinKarp {
         return code;
     }
 
-    private boolean RabinKarp(String text, String pattern) {
+    public boolean RabinKarp(String text, String pattern) {
         if(text.length() < pattern.length())
             return false;
 

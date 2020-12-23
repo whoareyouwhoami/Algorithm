@@ -7,7 +7,7 @@ public class CocktailSort {
         array[after] = tmp;
     }
 
-    private int[] cocktailSort(int[] array) {
+    public int[] cocktailSort(int[] array) {
         boolean status;
         int bottom = 0;
         int top = array.length;

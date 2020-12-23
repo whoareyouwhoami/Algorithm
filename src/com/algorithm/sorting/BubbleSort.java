@@ -2,7 +2,7 @@ package com.algorithm.sorting;
 
 public class BubbleSort {
 
-    private int[] bubbleSort(int[] array) {
+    public int[] bubbleSort(int[] array) {
         for(int bound = array.length - 1; bound > -1; bound--) {
             for(int i = 0; i < bound; i++) {
                 if (array[i] > array[i + 1]) {
