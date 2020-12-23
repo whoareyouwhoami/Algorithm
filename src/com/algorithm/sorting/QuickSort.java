@@ -33,7 +33,7 @@ public class QuickSort {
         return array;
     }
 
-    private int[] quickSort(int[] array) {
+    public int[] quickSort(int[] array) {
         return quickSortRecur(array, 0, array.length);
     }
 
