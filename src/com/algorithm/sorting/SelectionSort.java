@@ -1,7 +1,7 @@
 package com.algorithm.sorting;
 
 public class SelectionSort {
-    private int[] selectionSort(int[] array) {
+    public int[] selectionSort(int[] array) {
         for(int i = 0; i < array.length; i++) {
             int cur = array[i];
             int replace = i;

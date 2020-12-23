@@ -29,7 +29,7 @@ public class StringKMP {
         return failure;
     }
 
-    private boolean KMP(String text, String pattern) {
+    public boolean KMP(String text, String pattern) {
         int i = 0;
         int j = 0;
         int[] failure = KMPFailure(pattern);

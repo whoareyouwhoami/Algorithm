@@ -16,7 +16,7 @@ public class StringBoyerMoore {
         return lastOccurence;
     }
 
-    private boolean BoyerMoore(String text, String pattern) {
+    public boolean BoyerMoore(String text, String pattern) {
         int i = pattern.length() - 1;
         int j = pattern.length() - 1;
         int[] lastOccurence = lastOccurenceFunc(pattern);

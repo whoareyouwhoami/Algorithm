@@ -1,7 +1,7 @@
 package com.algorithm.sorting;
 
 public class InsertionSort {
-    private int[] insertionSort(int[] array) {
+    public int[] insertionSort(int[] array) {
         for(int i = 1; i < array.length; i++) {
             for(int j = i; j > 0; j--) {
 
