@@ -12,10 +12,10 @@ public class MergeSort {
         int idx = 0, idx1 = 0, idx2 = 0;
         int[] result = new int[array1.length + array2.length];
 
-        while(idx1 < array1.length || idx2 < array2.length) {
-            if(idx1 == array1.length)
+        while (idx1 < array1.length || idx2 < array2.length) {
+            if (idx1 == array1.length)
                 result[idx++] = array2[idx2++];
-            else if(idx2 == array2.length)
+            else if (idx2 == array2.length)
                 result[idx++] = array1[idx1++];
             else
                 result[idx++] = array1[idx1] < array2[idx2] ? array1[idx1++] : array2[idx2++];
@@ -24,7 +24,7 @@ public class MergeSort {
     }
 
     public int[] mergeSort(int[] array) {
-        if(array.length == 1)
+        if (array.length == 1)
             return array;
 
         int mid = array.length / 2;

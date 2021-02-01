@@ -9,7 +9,7 @@ public class BellmanFordTest {
 
     @Test
     public void test1() {
-        int[][] graph = new int[][] {
+        int[][] graph = new int[][]{
                 {0, 6, 5, 5, 0, 0, 0},
                 {0, 0, 0, 0, -1, 0, 0},
                 {0, -2, 0, 0, 1, 0, 0},
@@ -26,7 +26,7 @@ public class BellmanFordTest {
 
     @Test
     public void test2() {
-        int[][] graph = new int[][] {
+        int[][] graph = new int[][]{
                 {0, 4, 0, 5},
                 {0, 0, 0, 0},
                 {0, -10, 0, 0},
@@ -41,7 +41,7 @@ public class BellmanFordTest {
 
     @Test
     public void testNegativeWeightCycle() {
-        int[][] graph = new int[][] {
+        int[][] graph = new int[][]{
                 {0, 4, 0, 5},
                 {0, 0, 0, 5},
                 {0, -10, 0, 0},

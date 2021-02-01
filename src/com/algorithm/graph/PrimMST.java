@@ -19,22 +19,22 @@ public class PrimMST {
         PriorityQueue<int[]> pq = new PriorityQueue<>((edg1, edg2) -> (edg1[1] - edg2[1]));
 
         // Start from vertex 0
-        pq.add(new int[] {0, 0});
+        pq.add(new int[]{0, 0});
 
-        while(!pq.isEmpty()) {
+        while (!pq.isEmpty()) {
             int[] edge = pq.poll();
             int from = edge[0], dist = edge[1];
 
-            if(visited[from])
+            if (visited[from])
                 continue;
 
             visited[from] = true;
 
             cost += dist; // Update distance
 
-            for(int col = 0; col < graph[from].length; col++) {
-                if(graph[from][col] > 0 && !visited[col])
-                    pq.add(new int[] {col, graph[from][col]});
+            for (int col = 0; col < graph[from].length; col++) {
+                if (graph[from][col] > 0 && !visited[col])
+                    pq.add(new int[]{col, graph[from][col]});
             }
         }
         return cost;

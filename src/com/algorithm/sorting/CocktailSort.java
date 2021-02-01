@@ -12,39 +12,40 @@ public class CocktailSort {
         int bottom = 0;
         int top = array.length;
 
-        while(true) {
+        while (true) {
             // Left -> Right
             status = false;
-            for(int up = 0; up < top - 1; up++) {
-                if(array[up] > array[up + 1]) {
+            for (int up = 0; up < top - 1; up++) {
+                if (array[up] > array[up + 1]) {
                     swapValue(array, up, up + 1);
                     status = true;
                 }
             }
-            if(!status)
+            if (!status)
                 return array;
 
             // Right -> Left
             top--;
             status = false;
-            for(int down = top; down > bottom; down--) {
-                if(array[down] < array[down - 1]) {
+            for (int down = top; down > bottom; down--) {
+                if (array[down] < array[down - 1]) {
                     swapValue(array, down - 1, down);
                     status = true;
                 }
             }
 
-            if(!status)
+            if (!status)
                 return array;
             bottom++;
         }
     }
+
     public static void main(String[] args) {
         CocktailSort s = new CocktailSort();
-        int[] sorted = s.cocktailSort(new int[] {5, 9, 1, 4, 8, 2, 0, 6});
+        int[] sorted = s.cocktailSort(new int[]{5, 9, 1, 4, 8, 2, 0, 6});
 
         System.out.print("Sorted: ");
-        for(int x: sorted) {
+        for (int x : sorted) {
             System.out.print(x + " ");
         }
 

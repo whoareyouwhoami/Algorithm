@@ -12,9 +12,9 @@ public class QuickSort {
         int pivotPos = low;
         int update = low;
 
-        for(int i = low + 1; i < high; i++) {
-            if(array[i] < pivotVal) {
-                if(array[pivotPos] == pivotVal)
+        for (int i = low + 1; i < high; i++) {
+            if (array[i] < pivotVal) {
+                if (array[pivotPos] == pivotVal)
                     update = i;
                 swap(array, i, pivotPos);
                 pivotPos++;
@@ -25,7 +25,7 @@ public class QuickSort {
     }
 
     private int[] quickSortRecur(int[] array, int low, int high) {
-        if(low < high) {
+        if (low < high) {
             int pivot = partition(array, low, high);
             quickSortRecur(array, low, pivot);
             quickSortRecur(array, pivot + 1, high);
@@ -39,10 +39,10 @@ public class QuickSort {
 
     public static void main(String[] args) {
         QuickSort s = new QuickSort();
-        int[] sorted = s.quickSort(new int[] {6, 1, 15, 9, 2, 23, 18, 3, 0, 31, 8, 7});
+        int[] sorted = s.quickSort(new int[]{6, 1, 15, 9, 2, 23, 18, 3, 0, 31, 8, 7});
 
         System.out.print("Sorted: ");
-        for(int x: sorted) {
+        for (int x : sorted) {
             System.out.print(x + " ");
         }
 

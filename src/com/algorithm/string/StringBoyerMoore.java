@@ -10,7 +10,7 @@ public class StringBoyerMoore {
         int[] lastOccurence = new int[26];
         Arrays.fill(lastOccurence, -1);
 
-        for(int idx = 0; idx < pattern.length(); idx++)
+        for (int idx = 0; idx < pattern.length(); idx++)
             lastOccurence[pattern.charAt(idx) - 'a'] = idx;
 
         return lastOccurence;
@@ -21,9 +21,9 @@ public class StringBoyerMoore {
         int j = pattern.length() - 1;
         int[] lastOccurence = lastOccurenceFunc(pattern);
 
-        while(i < text.length()) {
-            if(text.charAt(i) == pattern.charAt(j)) {
-                if(j == 0)
+        while (i < text.length()) {
+            if (text.charAt(i) == pattern.charAt(j)) {
+                if (j == 0)
                     return true;
                 i--;
                 j--;

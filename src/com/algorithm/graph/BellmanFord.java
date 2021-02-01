@@ -20,11 +20,11 @@ public class BellmanFord {
 
         Arrays.fill(distance, Integer.MAX_VALUE);
 
-        for(int r = 0; r < graph.length; r++) {
+        for (int r = 0; r < graph.length; r++) {
             List<int[]> row = new ArrayList<>();
-            for(int v = 0; v < numVertex; v++) {
-                if(graph[r][v] != 0)
-                    row.add(new int[] {r, v, graph[r][v]});
+            for (int v = 0; v < numVertex; v++) {
+                if (graph[r][v] != 0)
+                    row.add(new int[]{r, v, graph[r][v]});
             }
             edges.add(row);
         }
@@ -34,11 +34,11 @@ public class BellmanFord {
         // Set starting vertex as 0
         distance[0] = 0;
 
-        for(int i = 0; i < numVertex; i++) {
-            for(List<int[]> edge: edges) {
-                for(int[] e: edge) {
+        for (int i = 0; i < numVertex; i++) {
+            for (List<int[]> edge : edges) {
+                for (int[] e : edge) {
                     int start = e[0], end = e[1], w = e[2];
-                    if(distance[start] + w < distance[end]) {
+                    if (distance[start] + w < distance[end]) {
                         distance[end] = distance[start] + w;
                     }
                 }
@@ -46,10 +46,10 @@ public class BellmanFord {
         }
 
         // Check for negative weight cycle
-        for(List<int[]> edge: edges) {
-            for(int[] e: edge) {
+        for (List<int[]> edge : edges) {
+            for (int[] e : edge) {
                 int start = e[0], end = e[1], w = e[2];
-                if(distance[start] + w < distance[end]) {
+                if (distance[start] + w < distance[end]) {
                     return Integer.MIN_VALUE;
                 }
             }

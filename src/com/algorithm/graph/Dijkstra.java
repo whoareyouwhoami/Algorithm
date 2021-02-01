@@ -18,7 +18,6 @@ public class Dijkstra {
     private final List<List<int[]>> edges = new ArrayList<>();
 
     /**
-     *
      * @param mat Adjacency matrix with weight/distance
      */
     Dijkstra(int[][] mat) {
@@ -27,20 +26,19 @@ public class Dijkstra {
         distance = new int[node];
         Arrays.fill(distance, Integer.MAX_VALUE);
 
-        for(int r = 0; r < mat.length; r++) {
+        for (int r = 0; r < mat.length; r++) {
             List<int[]> row = new ArrayList<>();
-            for(int v = 0; v < node; v++) {
-                if(mat[r][v] != 0)
-                    row.add(new int[] {r, v, mat[r][v]});
+            for (int v = 0; v < node; v++) {
+                if (mat[r][v] != 0)
+                    row.add(new int[]{r, v, mat[r][v]});
             }
             edges.add(row);
         }
     }
 
     /**
-     *
-     * @param start  starting vertex
-     * @param end  destination vertex
+     * @param start starting vertex
+     * @param end   destination vertex
      * @return shortest distance
      */
     public int dijkstra(int start, int end) {
@@ -51,26 +49,26 @@ public class Dijkstra {
         distance[start] = 0;
 
         // Add initial vertex
-        pq.add(new int[] {start, 0, 0});
+        pq.add(new int[]{start, 0, 0});
 
         // Run
-        while(!pq.isEmpty()) {
+        while (!pq.isEmpty()) {
             int[] e = pq.poll();
             int next = e[1];
 
-            if(visited[next])
+            if (visited[next])
                 continue;
 
             visited[next] = true;
 
-            for(int[] child: edges.get(next)) {
+            for (int[] child : edges.get(next)) {
                 int from = child[0];
                 int to = child[1];
                 int dist = child[2];
 
                 // Relaxation
                 int distanceNew = distance[from] + dist;
-                if(!visited[to] && distanceNew < distance[to]) {
+                if (!visited[to] && distanceNew < distance[to]) {
                     distance[to] = distanceNew;
                     child[2] = distanceNew;
                 }
