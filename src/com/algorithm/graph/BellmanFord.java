@@ -34,7 +34,7 @@ public class BellmanFord {
         // Set starting vertex as 0
         distance[0] = 0;
 
-        for (int i = 0; i < numVertex; i++) {
+        for (int i = 0; i < numVertex - 1; i++) {
             for (List<int[]> edge : edges) {
                 for (int[] e : edge) {
                     int start = e[0], end = e[1], w = e[2];
