@@ -9,7 +9,8 @@ public class Kosaraju {
     /*
      * Strongly Connected Component
      *
-     *
+     * Time complexity: O(V + E)
+     * Space complexity: O(V)
      */
 
     private List<List<Integer>> graph = new ArrayList<>();
